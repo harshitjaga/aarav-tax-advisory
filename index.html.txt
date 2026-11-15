@@ -1,0 +1,1902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aarav Tax &amp; Advisory | Chartered Accountancy &amp; Financial Consulting</title>
+  <meta name="description" content="Aarav Tax &amp; Advisory — Simplifying Tax &amp; Financial Compliance for Indian Businesses and Professionals. Concept Portfolio by Webora Studio." />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Playfair Display for Editorial Corporate Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==========================================================================
+       1. CSS VARIABLES & DESIGN TOKENS
+       Customize brand colors, typography, and spacing from here.
+       ========================================================================== */
+    :root {
+      --navy: #142B45;
+      --navy-dark: #0D1D30;
+      --navy-light: #1E3E62;
+      --gold: #C7A76C;
+      --gold-hover: #B39154;
+      --gold-tint: rgba(199, 167, 108, 0.12);
+      --white: #FFFFFF;
+      --bg-offwhite: #F8F9FB;
+      --text-main: #1E293B;
+      --text-muted: #526071;
+      --border-light: #E2E8F0;
+      --error-red: #DC2626;
+      --success-green: #15803D;
+
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+      --container-max: 1200px;
+      --nav-height: 80px;
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --shadow-sm: 0 4px 20px rgba(20, 43, 69, 0.05);
+      --shadow-md: 0 12px 32px rgba(20, 43, 69, 0.09);
+      --shadow-lg: 0 20px 48px rgba(20, 43, 69, 0.14);
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    /* ==========================================================================
+       2. RESET & BASE STYLES
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--nav-height);
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-main);
+      background-color: var(--white);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ==========================================================================
+       3. TYPOGRAPHY & REUSABLE UI COMPONENTS
+       ========================================================================== */
+    .section-padding {
+      padding: 96px 0;
+    }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-hover);
+      margin-bottom: 14px;
+    }
+
+    .section-eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background-color: var(--gold);
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 3.6vw, 2.75rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .section-subtitle {
+      font-size: 1.0625rem;
+      color: var(--text-muted);
+      max-width: 640px;
+      line-height: 1.7;
+    }
+
+    .section-header-center {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 60px;
+    }
+
+    .section-header-center .section-eyebrow {
+      justify-content: center;
+    }
+
+    .section-header-center .section-subtitle {
+      margin: 0 auto;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 30px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      border: 1.5px solid transparent;
+      transition: var(--transition);
+    }
+
+    .btn-primary {
+      background-color: var(--gold);
+      color: var(--navy-dark);
+      border-color: var(--gold);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--gold-hover);
+      border-color: var(--gold-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(199, 167, 108, 0.3);
+    }
+
+    .btn-outline-light {
+      background-color: transparent;
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+
+    .btn-outline-light:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      background-color: rgba(255, 255, 255, 0.04);
+      transform: translateY(-2px);
+    }
+
+    .btn-navy {
+      background-color: var(--navy);
+      color: var(--white);
+      border-color: var(--navy);
+    }
+
+    .btn-navy:hover {
+      background-color: var(--navy-light);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* ==========================================================================
+       4. CONCEPT PORTFOLIO BANNER & NAVIGATION BAR
+       ========================================================================== */
+    .concept-bar {
+      background-color: var(--navy-dark);
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 0.78rem;
+      text-align: center;
+      padding: 8px 16px;
+      border-bottom: 1px solid rgba(199, 167, 108, 0.2);
+      letter-spacing: 0.02em;
+    }
+
+    .concept-bar span {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      height: var(--nav-height);
+      background-color: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-light);
+      transition: var(--transition);
+    }
+
+    .navbar.scrolled {
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-container {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Brand Logo Text */
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-monogram {
+      width: 42px;
+      height: 42px;
+      background-color: var(--navy);
+      color: var(--gold);
+      border: 1.5px solid var(--gold);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.25rem;
+      letter-spacing: 0.03em;
+      flex-shrink: 0;
+    }
+
+    .brand-text-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.15;
+    }
+
+    .brand-tagline {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-hover);
+    }
+
+    /* Desktop Menu */
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+    }
+
+    .nav-link {
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--navy);
+      position: relative;
+      padding: 6px 0;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--gold);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--navy);
+    }
+
+    .nav-cta {
+      padding: 10px 22px;
+      font-size: 0.875rem;
+    }
+
+    /* Mobile Hamburger Button */
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
+      color: var(--navy);
+    }
+
+    /* ==========================================================================
+       5. HERO SECTION
+       ========================================================================== */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, var(--navy-light) 100%);
+      color: var(--white);
+      padding: 110px 0 120px;
+      overflow: hidden;
+    }
+
+    /* Subtle architectural grid overlay */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(to right, rgba(199, 167, 108, 0.06) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(199, 167, 108, 0.06) 1px, transparent 1px);
+      background-size: 64px 64px;
+      pointer-events: none;
+    }
+
+    .hero-glow {
+      position: absolute;
+      top: -120px;
+      right: -120px;
+      width: 520px;
+      height: 520px;
+      background: radial-gradient(circle, rgba(199, 167, 108, 0.16) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 14px;
+      background-color: rgba(199, 167, 108, 0.14);
+      border: 1px solid rgba(199, 167, 108, 0.35);
+      border-radius: 50px;
+      color: var(--gold);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      margin-bottom: 24px;
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.6rem, 5vw, 3.85rem);
+      font-weight: 700;
+      line-height: 1.14;
+      color: var(--white);
+      margin-bottom: 18px;
+    }
+
+    .hero-title span {
+      color: var(--gold);
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.15rem, 2vw, 1.375rem);
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.92);
+      margin-bottom: 18px;
+    }
+
+    .hero-description {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.74);
+      max-width: 560px;
+      margin-bottom: 36px;
+      line-height: 1.75;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    /* Right Hero Visual Card (Advisory Pillar Summary) */
+    .hero-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(199, 167, 108, 0.28);
+      backdrop-filter: blur(14px);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+    }
+
+    .hero-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 20px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .hero-card-title {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: var(--white);
+    }
+
+    .hero-card-tag {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .hero-checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .hero-check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .hero-check-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background-color: rgba(199, 167, 108, 0.18);
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .hero-check-item h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 2px;
+    }
+
+    .hero-check-item p {
+      font-size: 0.84rem;
+      color: rgba(255, 255, 255, 0.68);
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       6. ABOUT US SECTION
+       ========================================================================== */
+    .about-section {
+      background-color: var(--white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .about-visual {
+      position: relative;
+      background-color: var(--navy);
+      border-radius: var(--radius-lg);
+      padding: 44px;
+      color: var(--white);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+
+    .about-visual::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-hover));
+    }
+
+    .about-quote-mark {
+      font-family: var(--font-heading);
+      font-size: 4rem;
+      line-height: 1;
+      color: var(--gold);
+      opacity: 0.6;
+      margin-bottom: 12px;
+    }
+
+    .about-visual h3 {
+      font-family: var(--font-heading);
+      font-size: 1.65rem;
+      line-height: 1.35;
+      margin-bottom: 20px;
+      color: var(--white);
+    }
+
+    .about-visual p {
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 0.95rem;
+      margin-bottom: 28px;
+    }
+
+    .about-pillars {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .pillar-box span {
+      display: block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .pillar-box strong {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .about-content p {
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      font-size: 1.02rem;
+    }
+
+    .about-highlights {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    .highlight-item {
+      padding: 18px 20px;
+      background-color: var(--bg-offwhite);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+
+    .highlight-item h4 {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .highlight-item p {
+      font-size: 0.86rem;
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       7. SERVICES SECTION (4 CORE CARDS)
+       ========================================================================== */
+    .services-section {
+      background-color: var(--bg-offwhite);
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 26px;
+    }
+
+    .service-card {
+      background-color: var(--white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 34px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(199, 167, 108, 0.5);
+    }
+
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .service-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: var(--radius-sm);
+      background-color: var(--navy);
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      transition: var(--transition);
+    }
+
+    .service-card:hover .service-icon {
+      background-color: var(--gold);
+      color: var(--navy-dark);
+    }
+
+    .service-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      font-size: 0.925rem;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+      line-height: 1.65;
+    }
+
+    .service-list {
+      border-top: 1px solid var(--border-light);
+      padding-top: 18px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .service-list li {
+      font-size: 0.85rem;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .service-list li::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-top: auto;
+    }
+
+    .service-link:hover {
+      color: var(--gold-hover);
+      gap: 10px;
+    }
+
+    /* ==========================================================================
+       8. WHY CHOOSE US SECTION
+       ========================================================================== */
+    .why-section {
+      background-color: var(--navy);
+      color: var(--white);
+      position: relative;
+    }
+
+    .why-section .section-title {
+      color: var(--white);
+    }
+
+    .why-section .section-subtitle {
+      color: rgba(255, 255, 255, 0.74);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .why-card {
+      background-color: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-md);
+      padding: 34px 30px;
+      transition: var(--transition);
+    }
+
+    .why-card:hover {
+      background-color: rgba(255, 255, 255, 0.07);
+      border-color: rgba(199, 167, 108, 0.45);
+      transform: translateY(-4px);
+    }
+
+    .why-number {
+      font-family: var(--font-heading);
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .why-card h3 {
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .why-card p {
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.74);
+      line-height: 1.65;
+    }
+
+    /* ==========================================================================
+       9. CONTACT & ENQUIRY FORM SECTION
+       ========================================================================== */
+    .contact-section {
+      background-color: var(--white);
+    }
+
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .contact-info-box {
+      background-color: var(--bg-offwhite);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+    }
+
+    .contact-info-box h3 {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      color: var(--navy);
+      margin-bottom: 14px;
+    }
+
+    .contact-info-box > p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 30px;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      margin-bottom: 32px;
+    }
+
+    .contact-detail-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .contact-detail-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: var(--radius-sm);
+      background-color: var(--navy);
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-detail-item h4 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 3px;
+    }
+
+    .contact-detail-item p {
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .demo-disclaimer-box {
+      padding: 16px 18px;
+      background-color: var(--gold-tint);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.84rem;
+      color: var(--navy);
+      line-height: 1.55;
+    }
+
+    /* Form Card */
+    .form-card {
+      background-color: var(--white);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 42px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .form-label span {
+      color: var(--error-red);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 13px 16px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--text-main);
+      background-color: var(--white);
+      border: 1.5px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--navy);
+      box-shadow: 0 0 0 3px rgba(20, 43, 69, 0.08);
+    }
+
+    .form-control.invalid {
+      border-color: var(--error-red);
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .error-message {
+      display: none;
+      font-size: 0.8rem;
+      color: var(--error-red);
+      margin-top: 6px;
+      font-weight: 500;
+    }
+
+    .error-message.visible {
+      display: block;
+    }
+
+    /* Demo Confirmation Alert */
+    .form-confirmation {
+      display: none;
+      margin-top: 24px;
+      padding: 20px 22px;
+      background-color: #F0FDF4;
+      border: 1px solid #BBF7D0;
+      border-left: 4px solid var(--success-green);
+      border-radius: var(--radius-sm);
+      color: #14532D;
+    }
+
+    .form-confirmation.visible {
+      display: block;
+      animation: fadeSlideUp 0.35s ease forwards;
+    }
+
+    .form-confirmation h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .form-confirmation p {
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+
+    /* ==========================================================================
+       10. FOOTER
+       ========================================================================== */
+    .footer {
+      background-color: var(--navy-dark);
+      color: rgba(255, 255, 255, 0.78);
+      padding-top: 72px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+      gap: 44px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-brand .brand-name {
+      color: var(--white);
+    }
+
+    .footer-desc {
+      margin-top: 18px;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.68);
+      max-width: 320px;
+    }
+
+    .footer h4 {
+      font-family: var(--font-heading);
+      font-size: 1.12rem;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+      padding-left: 4px;
+    }
+
+    .footer-note {
+      font-size: 0.86rem;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    .footer-bottom {
+      padding: 24px 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 0.84rem;
+      color: rgba(255, 255, 255, 0.62);
+    }
+
+    .credit-badge {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    /* ==========================================================================
+       11. ANIMATIONS & SCROLL REVEAL
+       ========================================================================== */
+    @keyframes fadeSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ==========================================================================
+       12. RESPONSIVE MEDIA QUERIES (TABLET & MOBILE)
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .hero-grid,
+      .about-grid,
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 44px;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section-padding {
+        padding: 72px 0;
+      }
+
+      .mobile-toggle {
+        display: flex;
+      }
+
+      .nav-menu {
+        position: fixed;
+        top: var(--nav-height);
+        left: 0;
+        right: 0;
+        background-color: var(--white);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 16px 24px 28px;
+        border-bottom: 1px solid var(--border-light);
+        box-shadow: var(--shadow-md);
+        transform: translateY(-130%);
+        opacity: 0;
+        pointer-events: none;
+        transition: var(--transition);
+      }
+
+      .nav-menu.open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .nav-link {
+        padding: 14px 0;
+        border-bottom: 1px solid var(--border-light);
+      }
+
+      .nav-link::after {
+        display: none;
+      }
+
+      .nav-cta {
+        margin-top: 16px;
+        text-align: center;
+      }
+
+      .hero {
+        padding: 76px 0 88px;
+      }
+
+      .services-grid,
+      .why-grid,
+      .about-highlights,
+      .form-row,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-card,
+      .contact-info-box,
+      .about-visual {
+        padding: 28px 22px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================================
+       PORTFOLIO CONCEPT NOTICE BAR
+       Customize or remove if adapting for a live commercial deployment.
+       ======================================================================== -->
+  <div class="concept-bar">
+    Fictional Portfolio Concept &bull; Designed &amp; Developed by <span>Webora Studio</span>
+  </div>
+
+  <!-- ========================================================================
+       1. NAVIGATION BAR
+       Customize logo text, navigation links, and CTA button below.
+       ======================================================================== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="brand-logo" aria-label="Aarav Tax & Advisory Home">
+        <div class="brand-monogram">AT</div>
+        <div class="brand-text-wrap">
+          <span class="brand-name">Aarav Tax &amp; Advisory</span>
+          <span class="brand-tagline">Chartered &amp; Financial Advisory</span>
+        </div>
+      </a>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <nav class="nav-menu" id="navMenu" aria-label="Primary Navigation">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About Us</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#why-us" class="nav-link">Why Choose Us</a>
+        <a href="#contact" class="btn btn-navy nav-cta">Book Consultation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ======================================================================
+         2. HERO SECTION
+         Customize headline, subtitle, and primary call-to-action links here.
+         ====================================================================== -->
+    <section class="hero" id="home">
+      <div class="hero-glow"></div>
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-badge">
+            <span>&bull;</span> Corporate Tax, GST &amp; Regulatory Advisory
+          </div>
+          <h1 class="hero-title">
+            Your Finances.<br />
+            <span>Our Expertise.</span>
+          </h1>
+          <p class="hero-subtitle">Simplifying Tax &amp; Financial Compliance.</p>
+          <p class="hero-description">
+            Structured taxation, statutory compliance, and financial clarity designed for Indian startups, growing enterprises, and independent professionals.
+          </p>
+          <div class="hero-actions">
+            <a href="#services" class="btn btn-primary">
+              Explore Our Services
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#contact" class="btn btn-outline-light">Request an Enquiry</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Core Compliance Focus">
+          <div class="hero-card-header">
+            <h2 class="hero-card-title">Compliance Framework</h2>
+            <span class="hero-card-tag">India Focus</span>
+          </div>
+          <div class="hero-checklist">
+            <div class="hero-check-item">
+              <div class="hero-check-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <div>
+                <h4>Direct &amp; Indirect Tax Filing</h4>
+                <p>Timely Income Tax Return and GST compliance workflows aligned with statutory calendars.</p>
+              </div>
+            </div>
+            <div class="hero-check-item">
+              <div class="hero-check-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <div>
+                <h4>Entity Structuring &amp; Incorporation</h4>
+                <p>End-to-end documentation support for Proprietorships, LLPs, and Private Limited entities.</p>
+              </div>
+            </div>
+            <div class="hero-check-item">
+              <div class="hero-check-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <div>
+                <h4>Clean Bookkeeping &amp; Reporting</h4>
+                <p>Organized financial ledgers and periodic reconciliations for informed decision-making.</p>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. ABOUT US SECTION
+         Customize firm overview, values, and advisory approach below.
+         ====================================================================== -->
+    <section class="about-section section-padding" id="about">
+      <div class="container about-grid">
+        <div class="about-visual reveal">
+          <div class="about-quote-mark">&ldquo;</div>
+          <h3>Precision in compliance builds the foundation for sustainable business growth.</h3>
+          <p>
+            At Aarav Tax &amp; Advisory, we bridge complex Indian regulatory requirements with clear, practical financial guidance—so business owners can focus on operations with peace of mind.
+          </p>
+          <div class="about-pillars">
+            <div class="pillar-box">
+              <span>Core Approach</span>
+              <strong>Proactive Compliance</strong>
+            </div>
+            <div class="pillar-box">
+              <span>Client Focus</span>
+              <strong>Transparent Advisory</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-content reveal">
+          <div class="section-eyebrow">About Our Practice</div>
+          <h2 class="section-title">A Modern Advisory Partner for Indian Businesses</h2>
+          <p>
+            Aarav Tax &amp; Advisory is a contemporary taxation and financial consultancy concept built around clarity, accuracy, and disciplined execution. Navigating India&rsquo;s evolving tax and regulatory landscape requires structured systems rather than last-minute filings.
+          </p>
+          <p>
+            Whether you are an individual taxpayer, a newly incorporated startup, or an established SME, our workflow emphasizes transparent documentation, timely statutory reminders, and clear communication at every stage.
+          </p>
+
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <h4>Structured Processes</h4>
+              <p>Checklist-driven tax and accounting workflows designed to minimize compliance gaps.</p>
+            </div>
+            <div class="highlight-item">
+              <h4>Plain-Language Guidance</h4>
+              <p>Complex tax rules explained clearly without unnecessary jargon or ambiguity.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4. SERVICES SECTION (4 REQUIRED CARDS)
+         Income Tax, GST Services, Business Registration, Accounting
+         ====================================================================== -->
+    <section class="services-section section-padding" id="services">
+      <div class="container">
+        <div class="section-header-center reveal">
+          <div class="section-eyebrow">What We Do</div>
+          <h2 class="section-title">Comprehensive Tax &amp; Compliance Services</h2>
+          <p class="section-subtitle">
+            Focused advisory solutions tailored to support regulatory adherence and clean financial operations across every stage of your business lifecycle.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Card 1: Income Tax -->
+          <article class="service-card reveal">
+            <div>
+              <div class="service-icon" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+              </div>
+              <h3>Income Tax</h3>
+              <p>
+                Accurate return preparation, tax planning, and statutory TDS compliance for salaried individuals, professionals, and corporate entities.
+              </p>
+              <ul class="service-list">
+                <li>ITR Filing (Individuals &amp; Businesses)</li>
+                <li>Advance Tax &amp; Liability Assessment</li>
+                <li>TDS Return Filing &amp; Reconciliation</li>
+              </ul>
+            </div>
+            <a href="#contact" class="service-link" data-service="Income Tax">
+              Enquire Now
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </article>
+
+          <!-- Card 2: GST Services -->
+          <article class="service-card reveal">
+            <div>
+              <div class="service-icon" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </div>
+              <h3>GST Services</h3>
+              <p>
+                End-to-end Goods &amp; Services Tax management covering registration, periodic return filings, and Input Tax Credit matching.
+              </p>
+              <ul class="service-list">
+                <li>New GST Registration &amp; Amendments</li>
+                <li>Monthly &amp; Quarterly Return Filings</li>
+                <li>ITC Reconciliation &amp; Annual Summary</li>
+              </ul>
+            </div>
+            <a href="#contact" class="service-link" data-service="GST Services">
+              Enquire Now
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </article>
+
+          <!-- Card 3: Business Registration -->
+          <article class="service-card reveal">
+            <div>
+              <div class="service-icon" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                  <path d="M9 3v18"></path>
+                  <path d="M13 8h4"></path>
+                  <path d="M13 12h4"></path>
+                  <path d="M13 16h4"></path>
+                </svg>
+              </div>
+              <h3>Business Registration</h3>
+              <p>
+                Seamless entity formation and foundational licensing support to help founders launch operations on a compliant legal footing.
+              </p>
+              <ul class="service-list">
+                <li>Private Limited &amp; LLP Incorporation</li>
+                <li>Partnership &amp; Proprietorship Setup</li>
+                <li>MSME / Udyam &amp; Startup Registrations</li>
+              </ul>
+            </div>
+            <a href="#contact" class="service-link" data-service="Business Registration">
+              Enquire Now
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </article>
+
+          <!-- Card 4: Accounting -->
+          <article class="service-card reveal">
+            <div>
+              <div class="service-icon" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="20" x2="18" y2="10"></line>
+                  <line x1="12" y1="20" x2="12" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+              </div>
+              <h3>Accounting</h3>
+              <p>
+                Consistent bookkeeping, ledger maintenance, and financial statement preparation to keep your business audit-ready year-round.
+              </p>
+              <ul class="service-list">
+                <li>Cloud &amp; Ledger Bookkeeping</li>
+                <li>Bank &amp; Vendor Reconciliations</li>
+                <li>MIS Reports &amp; Balance Sheet Prep</li>
+              </ul>
+            </div>
+            <a href="#contact" class="service-link" data-service="Accounting">
+              Enquire Now
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. WHY CHOOSE US SECTION
+         Customize key differentiators below.
+         ====================================================================== -->
+    <section class="why-section section-padding" id="why-us">
+      <div class="container">
+        <div class="section-header-center reveal">
+          <div class="section-eyebrow">Why Choose Us</div>
+          <h2 class="section-title">Built on Discipline, Clarity &amp; Trust</h2>
+          <p class="section-subtitle">
+            We combine modern digital workflows with attentive advisory standards to keep your financial compliance predictable and stress-free.
+          </p>
+        </div>
+
+        <div class="why-grid">
+          <div class="why-card reveal">
+            <span class="why-number">01</span>
+            <h3>Deadline-Driven Execution</h3>
+            <p>
+              Structured compliance calendars and proactive reminders help ensure filings are completed well ahead of statutory due dates.
+            </p>
+          </div>
+
+          <div class="why-card reveal">
+            <span class="why-number">02</span>
+            <h3>Transparent Communication</h3>
+            <p>
+              Clear scope definitions, straightforward documentation checklists, and accessible explanations at every step of the engagement.
+            </p>
+          </div>
+
+          <div class="why-card reveal">
+            <span class="why-number">03</span>
+            <h3>Confidentiality &amp; Data Integrity</h3>
+            <p>
+              Strict handling protocols for financial statements, identity records, and tax filings to safeguard sensitive business information.
+            </p>
+          </div>
+
+          <div class="why-card reveal">
+            <span class="why-number">04</span>
+            <h3>Digital-First Convenience</h3>
+            <p>
+              Streamlined document sharing and remote consultation workflows designed for busy founders and professionals across India.
+            </p>
+          </div>
+
+          <div class="why-card reveal">
+            <span class="why-number">05</span>
+            <h3>Tailored for Growing Entities</h3>
+            <p>
+              Practical advisory frameworks that scale smoothly from early-stage registration to recurring monthly GST and accounting needs.
+            </p>
+          </div>
+
+          <div class="why-card reveal">
+            <span class="why-number">06</span>
+            <h3>Dedicated Point of Contact</h3>
+            <p>
+              Consistent coordination so you never have to repeat your business context across fragmented support channels.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         6. CONTACT SECTION WITH ENQUIRY FORM
+         Customize contact details and form fields below.
+         ====================================================================== -->
+    <section class="contact-section section-padding" id="contact">
+      <div class="container contact-wrapper">
+        <div class="contact-info-box reveal">
+          <div class="section-eyebrow">Get In Touch</div>
+          <h3>Start a Conversation</h3>
+          <p>
+            Have a question regarding Income Tax, GST compliance, or registering a new venture? Share your details using the enquiry form.
+          </p>
+
+          <div class="contact-details">
+            <div class="contact-detail-item">
+              <div class="contact-detail-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div>
+                <h4>Office Location (Concept)</h4>
+                <p>Financial District, Mumbai / Bengaluru, India</p>
+              </div>
+            </div>
+
+            <div class="contact-detail-item">
+              <div class="contact-detail-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div>
+                <h4>Consultation Desk</h4>
+                <p>advisory@aaravtax-demo.in</p>
+              </div>
+            </div>
+
+            <div class="contact-detail-item">
+              <div class="contact-detail-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div>
+                <h4>Working Hours</h4>
+                <p>Monday &ndash; Saturday: 10:00 AM &ndash; 6:30 PM IST</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="demo-disclaimer-box">
+            <strong>Portfolio Notice:</strong> Aarav Tax &amp; Advisory is a fictional brand created by <strong>Webora Studio</strong> to showcase corporate web design. Submitting this form triggers an interactive front-end demo confirmation and does not transmit data to a live firm.
+          </div>
+        </div>
+
+        <div class="form-card reveal">
+          <form id="enquiryForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullName" class="form-label">Full Name <span>*</span></label>
+                <input type="text" id="fullName" name="fullName" class="form-control" placeholder="e.g., Rohan Sharma" required />
+                <div class="error-message" id="nameError">Please enter your full name (at least 2 characters).</div>
+              </div>
+
+              <div class="form-group">
+                <label for="emailAddress" class="form-label">Email Address <span>*</span></label>
+                <input type="email" id="emailAddress" name="emailAddress" class="form-control" placeholder="e.g., rohan@company.in" required />
+                <div class="error-message" id="emailError">Please enter a valid email address.</div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phoneNumber" class="form-label">Phone Number <span>*</span></label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control" placeholder="e.g., +91 98765 43210" required />
+                <div class="error-message" id="phoneError">Please enter a valid 10-digit phone number.</div>
+              </div>
+
+              <div class="form-group">
+                <label for="serviceSelect" class="form-label">Service Required <span>*</span></label>
+                <select id="serviceSelect" name="serviceSelect" class="form-control" required>
+                  <option value="">Select a service...</option>
+                  <option value="Income Tax">Income Tax</option>
+                  <option value="GST Services">GST Services</option>
+                  <option value="Business Registration">Business Registration</option>
+                  <option value="Accounting">Accounting</option>
+                </select>
+                <div class="error-message" id="serviceError">Please select a service from the list.</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="messageText" class="form-label">Brief Requirement <span>*</span></label>
+              <textarea id="messageText" name="messageText" class="form-control" placeholder="Tell us briefly about your tax, GST, registration, or accounting requirement..." required></textarea>
+              <div class="error-message" id="messageError">Please provide a short description of your enquiry (at least 10 characters).</div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              Submit Demo Enquiry
+            </button>
+
+            <!-- Interactive Front-End Demo Confirmation Message -->
+            <div class="form-confirmation" id="formConfirmation" role="status" aria-live="polite">
+              <h4>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                Demo Enquiry Confirmed
+              </h4>
+              <p id="confirmationDetails"></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       7. PROFESSIONAL FOOTER
+       Customize footer links, copyright, and studio credit below.
+       ======================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="brand-logo">
+            <div class="brand-monogram">AT</div>
+            <div class="brand-text-wrap">
+              <span class="brand-name">Aarav Tax &amp; Advisory</span>
+              <span class="brand-tagline">Chartered &amp; Financial Advisory</span>
+            </div>
+          </a>
+          <p class="footer-desc">
+            Simplifying Tax &amp; Financial Compliance for modern Indian enterprises, startups, and professionals through structured advisory workflows.
+          </p>
+        </div>
+
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#why-us">Why Choose Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Core Services</h4>
+          <ul class="footer-links">
+            <li><a href="#services">Income Tax</a></li>
+            <li><a href="#services">GST Services</a></li>
+            <li><a href="#services">Business Registration</a></li>
+            <li><a href="#services">Accounting</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Portfolio Disclaimer</h4>
+          <p class="footer-note">
+            This website is a fictional portfolio showcase for <strong>Aarav Tax &amp; Advisory</strong>. No real chartered accountancy practice, registration numbers, or client representations are implied.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> Aarav Tax &amp; Advisory. Fictional Concept Website.</p>
+        <p>Designed &amp; Built by <span class="credit-badge">Webora Studio</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       JAVASCRIPT: NAVIGATION, SCROLL EFFECTS, PREFILL & FORM VALIDATION
+       ======================================================================== -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. Set Current Year in Footer
+      const yearEl = document.getElementById("currentYear");
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+
+      // 2. Mobile Navigation Toggle
+      const mobileToggle = document.getElementById("mobileToggle");
+      const navMenu = document.getElementById("navMenu");
+      const navLinks = document.querySelectorAll(".nav-link, .nav-cta");
+
+      mobileToggle.addEventListener("click", () => {
+        const isOpen = navMenu.classList.toggle("open");
+        mobileToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      // Close mobile menu when a link is clicked
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          navMenu.classList.remove("open");
+          mobileToggle.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      // 3. Navbar Shadow & Active Link Highlight on Scroll
+      const navbar = document.getElementById("navbar");
+      const sections = document.querySelectorAll("section[id]");
+
+      const handleScroll = () => {
+        if (window.scrollY > 20) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+
+        let currentSectionId = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 130;
+          if (window.scrollY >= sectionTop) {
+            currentSectionId = section.getAttribute("id");
+          }
+        });
+
+        document.querySelectorAll(".nav-link").forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${currentSectionId}`) {
+            link.classList.add("active");
+          }
+        });
+      };
+
+      window.addEventListener("scroll", handleScroll, { passive: true });
+
+      // 4. Pre-select Service Dropdown when clicking "Enquire Now" on Service Cards
+      const serviceSelect = document.getElementById("serviceSelect");
+      document.querySelectorAll(".service-link[data-service]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const chosenService = btn.getAttribute("data-service");
+          if (serviceSelect && chosenService) {
+            serviceSelect.value = chosenService;
+          }
+        });
+      });
+
+      // 5. Scroll Reveal Animation via IntersectionObserver
+      const revealElements = document.querySelectorAll(".reveal");
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("in-view");
+                obs.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12 }
+        );
+        revealElements.forEach((el) => observer.observe(el));
+      } else {
+        revealElements.forEach((el) => el.classList.add("in-view"));
+      }
+
+      // 6. Client-Side Form Validation & Demo Confirmation
+      const enquiryForm = document.getElementById("enquiryForm");
+      const fullNameInput = document.getElementById("fullName");
+      const emailInput = document.getElementById("emailAddress");
+      const phoneInput = document.getElementById("phoneNumber");
+      const messageInput = document.getElementById("messageText");
+
+      const nameError = document.getElementById("nameError");
+      const emailError = document.getElementById("emailError");
+      const phoneError = document.getElementById("phoneError");
+      const serviceError = document.getElementById("serviceError");
+      const messageError = document.getElementById("messageError");
+
+      const formConfirmation = document.getElementById("formConfirmation");
+      const confirmationDetails = document.getElementById("confirmationDetails");
+
+      const setFieldState = (input, errorEl, isValid) => {
+        if (!isValid) {
+          input.classList.add("invalid");
+          errorEl.classList.add("visible");
+        } else {
+          input.classList.remove("invalid");
+          errorEl.classList.remove("visible");
+        }
+        return isValid;
+      };
+
+      const validateForm = () => {
+        const nameVal = fullNameInput.value.trim();
+        const emailVal = emailInput.value.trim();
+        const phoneDigits = phoneInput.value.replace(/\D/g, "");
+        const serviceVal = serviceSelect.value.trim();
+        const messageVal = messageInput.value.trim();
+
+        const isNameValid = setFieldState(fullNameInput, nameError, nameVal.length >= 2);
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const isEmailValid = setFieldState(emailInput, emailError, emailRegex.test(emailVal));
+        const isPhoneValid = setFieldState(phoneInput, phoneError, phoneDigits.length >= 10 && phoneDigits.length <= 13);
+        const isServiceValid = setFieldState(serviceSelect, serviceError, serviceVal !== "");
+        const isMessageValid = setFieldState(messageInput, messageError, messageVal.length >= 10);
+
+        return isNameValid && isEmailValid && isPhoneValid && isServiceValid && isMessageValid;
+      };
+
+      // Clear individual error states live as user types/changes
+      [
+        [fullNameInput, nameError],
+        [emailInput, emailError],
+        [phoneInput, phoneError],
+        [serviceSelect, serviceError],
+        [messageInput, messageError]
+      ].forEach(([field, err]) => {
+        field.addEventListener("input", () => {
+          field.classList.remove("invalid");
+          err.classList.remove("visible");
+        });
+      });
+
+      enquiryForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        formConfirmation.classList.remove("visible");
+
+        if (validateForm()) {
+          const submittedName = fullNameInput.value.trim();
+          const submittedService = serviceSelect.value;
+
+          confirmationDetails.innerHTML = `
+            Thank you, <strong>${escapeHTML(submittedName)}</strong>. Your enquiry regarding <strong>${escapeHTML(submittedService)}</strong> has been validated in this interactive front-end preview.<br /><br />
+            <em>Note: Because this is a fictional portfolio website created by Webora Studio with no live backend, no real message or email has been transmitted.</em>
+          `;
+
+          formConfirmation.classList.add("visible");
+          enquiryForm.reset();
+        }
+      });
+
+      // Helper to sanitize user input before inserting into confirmation HTML
+      function escapeHTML(str) {
+        const div = document.createElement("div");
+        div.textContent = str;
+        return div.innerHTML;
+      }
+    });
+  </script>
+</body>
+</html>
